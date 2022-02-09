@@ -1,0 +1,18 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Book {
+  id: ID!
+  title: String!
+  author: Author!
+}
+
+extend type Author @key(fields: "id") {
+  id: ID! @external
+}
+
+extend type Query {
+  books: [Book!]!
+  book(id: String!): Book!
+}
